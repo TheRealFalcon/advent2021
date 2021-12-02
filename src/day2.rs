@@ -9,7 +9,7 @@ pub fn day2_part1(input: Vec<String>) {
             "forward" => horizontal_total += num,
             "down" => vertical_total += num,
             "up" => vertical_total -= num,
-            _ => panic!("fuck"),
+            _ => panic!("Mark!"),
         }
     }
     println!("{}", horizontal_total * vertical_total);
@@ -30,7 +30,7 @@ pub fn day2_part2(input: Vec<String>) {
             }
             "down" => aim += num,
             "up" => aim -= num,
-            _ => panic!("fuck"),
+            _ => panic!("Mark!"),
         }
     }
     println!("{}", horizontal_total * vertical_total);
