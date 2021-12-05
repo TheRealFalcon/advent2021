@@ -1,19 +1,18 @@
 use std::fs::File;
-use std::io::{BufRead, BufReader};
+use std::io::{BufRead, BufReader, Read};
 
-mod day3;
-use day3::day3_part1;
-use day3::day3_part2;
+mod day4;
+use day4::part1;
+use day4::part2;
 
-#[macro_use]
-extern crate itertools;
-
-static INPUT: &str = "src/day3_input.txt";
+static INPUT: &str = "src/day4_input.txt";
 
 fn main() {
-    let reader = BufReader::new(File::open(INPUT).unwrap());
-    let lines: Vec<_> = reader.lines().filter_map(Result::ok).collect();
+    let mut reader = BufReader::new(File::open(INPUT).unwrap());
+    // let lines: Vec<_> = reader.lines().filter_map(Result::ok).collect();
+    let mut data = String::new();
+    reader.read_to_string(&mut data).unwrap();
 
-    day3_part1(&lines);
-    day3_part2(&lines);
+    part1(data.clone());
+    part2(data.clone());
 }
